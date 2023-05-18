@@ -1,0 +1,181 @@
+<!DOCTYPE html> <html><head>
+        <title>Bennett Unit 6 Project</title>
+    <style>html {
+    background-image: url("https://cdn.pixabay.com/photo/2017/08/15/08/23/stars-2643089__340.jpg");
+    color: white;
+    border:20px solid black;
+    width:1450px;
+    display:flex;
+    justify-content:center;
+    
+
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    font-size: 80px;
+    background-color: red;
+    border:15px solid black;
+}
+.q1{
+    font-size:50px;
+    display:flex;
+    justify-content:center;
+    background-color:#99b3ff;
+    border:10px solid black;
+}
+img {
+    border: 10px solid red;
+    width: 200px;
+}
+
+.message {
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    font-size:30px;
+    border:5px solid black;
+
+}
+.movieList{
+ font-size:20px;
+
+}
+.link{
+    font-size:30px;
+    background-color:#99ddff;
+    border: 8px solid black;
+    display:flex;
+    justify-content:center;
+    
+}
+.lin{
+    font-size:15px;
+   
+}
+button{
+ color:blue;   
+    border:solid darkgray;
+    background-color:white;
+    border-radius:10px;
+    position: center;
+    
+    
+    
+}
+button:hover{
+    background-color:#e6e6e6;
+    position: center;
+}
+.suggest{
+    font-size:50px;
+    background-color:#ff80ff;
+    border:10px solid black;
+    display:flex;
+    justify-content:center;
+}
+.dropbtn {
+    padding: 16px;
+    font-size: 16px;
+    justify-content:center;
+    position: center;
+}
+
+.dropdown {
+    position: center;
+    display:block;
+    justify-content:center;
+    width:80px;
+}
+
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color:white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #cccccc;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+</style></head>
+    <body>
+        <h2 class="title"> Movie recommendations</h2>
+        <div class="q1">Type in a movie genre!
+        </div>
+
+        <div class="dropdown">
+            <div class="yo">
+            <button class="dropbtn">Genre</button>
+            </div>
+            <div class="dropdown-content">
+                <a class="action">Action</a>
+                <a class="comedy">Comedy</a>
+                <a class="romance">Romance</a>
+            </div>
+        </div>
+
+
+        <div class="message">
+        </div>
+        <h4 class="link">
+            Add a link: <input class="lin">
+            <button class="addButton">Add Link</button>
+        </h4>
+
+        <div class="suggest">
+            Suggested Movies:
+        </div>
+        <div class="movieList">
+        </div>
+
+        <div class="message">
+        </div>
+    
+<script>
+/*__POPCODESTART__*/
+var action = document.querySelector(".action");
+var comedy = document.querySelector(".comedy");
+var romance = document.querySelector(".romance");
+var message = document.querySelector(".message");
+var movies = [];
+var addButton = document.querySelector(".addButton");
+var movieList = document.querySelector(".movieList");
+var image = document.querySelector("image");
+var imageUrls = ["https://m.media-amazon.com/images/M/MV5BNzJlM2NmZTItOGQyYS00MmE2LTkwZGUtNDFkNmJmZjRjZjcxXkEyXkFqcGdeQXVyMTA3MDk2NDg2._V1_.jpg", "https://m.media-amazon.com/images/M/MV5BOGYzYWE3YTAtMjg2Ni00MzRkLWEwYWItOWM1MjI3YzhjYTYyXkEyXkFqcGdeQXVyMTUzMTg2ODkz._V1_.jpg", "https://m.media-amazon.com/images/M/MV5BMTA1NDQ3NTcyOTNeQTJeQWpwZ15BbWU3MDA0MzA4MzE@._V1_.jpg"];
+
+action.onclick = function () {
+  message.innerHTML = "<div>" + "<img src=" + imageUrls[0] + "</div>" + "<div>" + "Shazam" + "</div>";
+};
+
+comedy.onclick = function () {
+  message.innerHTML = "<div>" + "<img src=" + imageUrls[1] + "</div>" + "<div>" + "Luck" + "</div>";
+};
+
+romance.onclick = function () {
+  message.innerHTML = "<div>" + "<img src=" + imageUrls[2] + "</div>" + "<div>" + "Pride and Prejudice" + "</div>";
+};
+
+addButton.onclick = function () {
+  var movieInput = document.querySelector(".lin").value; // Write your code below! 
+
+  movies.push(movieInput);
+  console.log(movies);
+  movieList.insertAdjacentHTML("beforeend", "<li>" + "<img src =" + movieInput + ">" + "</li>");
+  console.log(movies.length);
+};
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInBvcGNvZGVQcmV2aWV3LmpzIl0sIm5hbWVzIjpbImFjdGlvbiIsImRvY3VtZW50IiwicXVlcnlTZWxlY3RvciIsImNvbWVkeSIsInJvbWFuY2UiLCJtZXNzYWdlIiwibW92aWVzIiwiYWRkQnV0dG9uIiwibW92aWVMaXN0IiwiaW1hZ2UiLCJpbWFnZVVybHMiLCJvbmNsaWNrIiwiaW5uZXJIVE1MIiwibW92aWVJbnB1dCIsInZhbHVlIiwicHVzaCIsImNvbnNvbGUiLCJsb2ciLCJpbnNlcnRBZGphY2VudEhUTUwiLCJsZW5ndGgiXSwibWFwcGluZ3MiOiJBQUFBLElBQUlBLE1BQU0sR0FBR0MsUUFBUSxDQUFDQyxhQUFULENBQXVCLFNBQXZCLENBQWI7QUFDQSxJQUFJQyxNQUFNLEdBQUdGLFFBQVEsQ0FBQ0MsYUFBVCxDQUF1QixTQUF2QixDQUFiO0FBQ0EsSUFBSUUsT0FBTyxHQUFHSCxRQUFRLENBQUNDLGFBQVQsQ0FBdUIsVUFBdkIsQ0FBZDtBQUNBLElBQUlHLE9BQU8sR0FBR0osUUFBUSxDQUFDQyxhQUFULENBQXVCLFVBQXZCLENBQWQ7QUFDQSxJQUFJSSxNQUFNLEdBQUcsRUFBYjtBQUNBLElBQUlDLFNBQVMsR0FBR04sUUFBUSxDQUFDQyxhQUFULENBQXVCLFlBQXZCLENBQWhCO0FBQ0EsSUFBSU0sU0FBUyxHQUFHUCxRQUFRLENBQUNDLGFBQVQsQ0FBdUIsWUFBdkIsQ0FBaEI7QUFDQSxJQUFJTyxLQUFLLEdBQUdSLFFBQVEsQ0FBQ0MsYUFBVCxDQUF1QixPQUF2QixDQUFaO0FBQ0EsSUFBSVEsU0FBUyxHQUFHLENBQ1osK0hBRFksRUFFWiwrSEFGWSxFQUdaLCtGQUhZLENBQWhCOztBQU1BVixNQUFNLENBQUNXLE9BQVAsR0FBaUIsWUFBVztBQUdwQk4sRUFBQUEsT0FBTyxDQUFDTyxTQUFSLEdBQW9CLFVBQVUsV0FBVixHQUF3QkYsU0FBUyxDQUFDLENBQUQsQ0FBakMsR0FBdUMsUUFBdkMsR0FBa0QsT0FBbEQsR0FBNEQsUUFBNUQsR0FBdUUsUUFBM0Y7QUFDSCxDQUpMOztBQUtJUCxNQUFNLENBQUNRLE9BQVAsR0FBaUIsWUFBVztBQUV4Qk4sRUFBQUEsT0FBTyxDQUFDTyxTQUFSLEdBQW9CLFVBQVUsV0FBVixHQUF3QkYsU0FBUyxDQUFDLENBQUQsQ0FBakMsR0FBdUMsUUFBdkMsR0FBa0QsT0FBbEQsR0FBNEQsTUFBNUQsR0FBcUUsUUFBekY7QUFDSCxDQUhEOztBQUtETixPQUFPLENBQUNPLE9BQVIsR0FBa0IsWUFBYTtBQUMxQk4sRUFBQUEsT0FBTyxDQUFDTyxTQUFSLEdBQW9CLFVBQVUsV0FBVixHQUF3QkYsU0FBUyxDQUFDLENBQUQsQ0FBakMsR0FBdUMsUUFBdkMsR0FBa0QsT0FBbEQsR0FBNEQscUJBQTVELEdBQW9GLFFBQXhHO0FBQ0osQ0FGRDs7QUFLSEgsU0FBUyxDQUFDSSxPQUFWLEdBQW9CLFlBQVc7QUFDM0IsTUFBSUUsVUFBVSxHQUFHWixRQUFRLENBQUNDLGFBQVQsQ0FBdUIsTUFBdkIsRUFBK0JZLEtBQWhELENBRDJCLENBRTNCOztBQUNBUixFQUFBQSxNQUFNLENBQUNTLElBQVAsQ0FBWUYsVUFBWjtBQUNBRyxFQUFBQSxPQUFPLENBQUNDLEdBQVIsQ0FBWVgsTUFBWjtBQUNBRSxFQUFBQSxTQUFTLENBQUNVLGtCQUFWLENBQTZCLFdBQTdCLEVBQTBDLFNBQVMsWUFBVCxHQUF3QkwsVUFBeEIsR0FBcUMsR0FBckMsR0FBMkMsT0FBckY7QUFDQUcsRUFBQUEsT0FBTyxDQUFDQyxHQUFSLENBQVlYLE1BQU0sQ0FBQ2EsTUFBbkI7QUFDSCxDQVBEIiwic291cmNlc0NvbnRlbnQiOlsibGV0IGFjdGlvbiA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCIuYWN0aW9uXCIpO1xubGV0IGNvbWVkeSA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCIuY29tZWR5XCIpO1xubGV0IHJvbWFuY2UgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiLnJvbWFuY2VcIik7XG5sZXQgbWVzc2FnZSA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCIubWVzc2FnZVwiKTtcbmxldCBtb3ZpZXMgPSBbXTtcbmxldCBhZGRCdXR0b24gPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiLmFkZEJ1dHRvblwiKTtcbmxldCBtb3ZpZUxpc3QgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiLm1vdmllTGlzdFwiKTtcbmxldCBpbWFnZSA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCJpbWFnZVwiKTtcbmxldCBpbWFnZVVybHMgPSBbXG4gICAgXCJodHRwczovL20ubWVkaWEtYW1hem9uLmNvbS9pbWFnZXMvTS9NVjVCTnpKbE0yTm1aVEl0T0dReVlTMDBNbUUyTFRrd1pHVXROREZrTm1KbVpqUmpaamN4WGtFeVhrRnFjR2RlUVhWeU1UQTNNRGsyTkRnMi5fVjFfLmpwZ1wiLFxuICAgIFwiaHR0cHM6Ly9tLm1lZGlhLWFtYXpvbi5jb20vaW1hZ2VzL00vTVY1Qk9HWXpZV0UzWVRBdE1qZzJOaTAwTXpSa0xXRXdZV0l0T1dNMU1qSTNZemhqWVRZeVhrRXlYa0ZxY0dkZVFYVnlNVFV6TVRnMk9Ea3ouX1YxXy5qcGdcIixcbiAgICBcImh0dHBzOi8vbS5tZWRpYS1hbWF6b24uY29tL2ltYWdlcy9NL01WNUJNVEExTkRRM05UY3lPVE5lUVRKZVFXcHdaMTVCYldVM01EQTBNekE0TXpFQC5fVjFfLmpwZ1wiXG5dO1xuXG5hY3Rpb24ub25jbGljayA9IGZ1bmN0aW9uKCkge1xuICAgIFxuICAgICBcbiAgICAgICAgbWVzc2FnZS5pbm5lckhUTUwgPSBcIjxkaXY+XCIgKyBcIjxpbWcgc3JjPVwiICsgaW1hZ2VVcmxzWzBdICsgXCI8L2Rpdj5cIiArIFwiPGRpdj5cIiArIFwiU2hhemFtXCIgKyBcIjwvZGl2PlwiO1xuICAgIH07XG4gICAgY29tZWR5Lm9uY2xpY2sgPSBmdW5jdGlvbigpIHtcbiAgICBcbiAgICAgICAgbWVzc2FnZS5pbm5lckhUTUwgPSBcIjxkaXY+XCIgKyBcIjxpbWcgc3JjPVwiICsgaW1hZ2VVcmxzWzFdICsgXCI8L2Rpdj5cIiArIFwiPGRpdj5cIiArIFwiTHVja1wiICsgXCI8L2Rpdj5cIjtcbiAgICB9O1xuXG4gICByb21hbmNlLm9uY2xpY2sgPSBmdW5jdGlvbigpICAge1xuICAgICAgICBtZXNzYWdlLmlubmVySFRNTCA9IFwiPGRpdj5cIiArIFwiPGltZyBzcmM9XCIgKyBpbWFnZVVybHNbMl0gKyBcIjwvZGl2PlwiICsgXCI8ZGl2PlwiICsgXCJQcmlkZSBhbmQgUHJlanVkaWNlXCIgKyBcIjwvZGl2PlwiO1xuICAgfTtcbiAgIFxuXG5hZGRCdXR0b24ub25jbGljayA9IGZ1bmN0aW9uKCkge1xuICAgIGxldCBtb3ZpZUlucHV0ID0gZG9jdW1lbnQucXVlcnlTZWxlY3RvcihcIi5saW5cIikudmFsdWU7XG4gICAgLy8gV3JpdGUgeW91ciBjb2RlIGJlbG93ISBcbiAgICBtb3ZpZXMucHVzaChtb3ZpZUlucHV0KTtcbiAgICBjb25zb2xlLmxvZyhtb3ZpZXMpO1xuICAgIG1vdmllTGlzdC5pbnNlcnRBZGphY2VudEhUTUwoXCJiZWZvcmVlbmRcIiwgXCI8bGk+XCIgKyBcIjxpbWcgc3JjID1cIiArIG1vdmllSW5wdXQgKyBcIj5cIiArIFwiPC9saT5cIik7XG4gICAgY29uc29sZS5sb2cobW92aWVzLmxlbmd0aCk7XG59OyJdfQ==</script></body></html>
